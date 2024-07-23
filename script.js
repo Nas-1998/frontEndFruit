@@ -30,10 +30,22 @@ async function createNewFruit(e) {
         },
 // Body
         body: JSON.stringify(data)
-
-
-
     }
+
+async function deleteFruit(e){
+    e.preventDefault();
+
+    const data = {name: e.target.fruitInput.value}
+    const options = {
+        method: "DELETE",
+
+        headers: {
+            "content-type": "applciation/json"
+        },
+    }
+}
+
+    
     const response = await fetch("https://crud-server-wbu7.onrender.com/fruits", options)
     if (response.status === 201){
         console.log("YES DONE")
